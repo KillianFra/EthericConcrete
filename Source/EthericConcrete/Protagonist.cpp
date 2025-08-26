@@ -34,6 +34,8 @@ void AProtagonist::BeginPlay()
 	if (AbilitySystemComponent && AttributeSet)
 	{
 		AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(AttributeSet->GetHealthAttribute()).AddUObject(this, &AProtagonist::HandleHealthChanged);
+		// Register anomaly change delegate
+		AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(AttributeSet->GetAnomalyAttribute()).AddUObject(this, &AProtagonist::HandleAnomalyChanged);
 	}
 	
 }
@@ -47,6 +49,14 @@ void AProtagonist::HandleHealthChanged(const FOnAttributeChangeData& Data)
 	float DeltaValue = newHealth - OldHealth;
 
 	OnHealthChanged(DeltaValue, FGameplayTagContainer());
+}
+
+void AProtagonist::HandleAnomalyChanged(const FOnAttributeChangeData& Data)
+{
+	int32 newAnomaly = static_cast<int32>(Data.NewValue);
+	int32 OldAnomaly = static_cast<int32>(Data.OldValue);
+
+	OnAnomalyChanged(OldAnomaly, newAnomaly, FGameplayTagContainer());
 }
 
 void AProtagonist::Tick(float DeltaTime)

@@ -18,7 +18,7 @@ UETHAttributeSet::UETHAttributeSet()
     Armor = 0.0f;
     WeaponDamage = 10.0f;
 
-    Anomaly = 1.0f;
+    Anomaly = 1;
     DistanceWeaponAccuracy = 1.0f;
     CriticalChance = 0.1f; // 10%
     CriticalDamage = 1.5f; // 150%

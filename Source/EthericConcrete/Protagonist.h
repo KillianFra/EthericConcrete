@@ -24,6 +24,9 @@ public:
 	UFUNCTION(BlueprintImplementableEvent, Category = "Health")
 	void OnHealthChanged(float DeltaValue, const FGameplayTagContainer& EventTags);
 
+	UFUNCTION(BlueprintImplementableEvent, Category = "Anomaly")
+	void OnAnomalyChanged(int32 OldAnomaly, int32 NewAnomaly, const FGameplayTagContainer& EventTags);
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -48,4 +51,6 @@ public:
 
 private:
 	void HandleHealthChanged(const FOnAttributeChangeData& Data);
+
+	void HandleAnomalyChanged(const FOnAttributeChangeData& Data);
 };
