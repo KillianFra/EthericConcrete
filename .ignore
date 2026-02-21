@@ -1,6 +1,11 @@
+/.claude
 /.git
 /.github
+/.vs
 /.vscode
 /Content
+/DerivedDataCache
 /Intermediate
 /Saved
+/Plugins/UEGitPlugin-dev/Intermediate
+/Plugins/UEGitPlugin-dev/Screenshots

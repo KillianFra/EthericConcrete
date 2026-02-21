@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C \"C:\\\\Users\\\\frava\\\\Documents\\\\Unreal Projects\\\\EthericConcrete 5.7\" log --oneline -15)",
+      "Bash(git -C \"C:\\\\Users\\\\frava\\\\Documents\\\\Unreal Projects\\\\EthericConcrete 5.7\" branch -a)",
+      "Bash(git -C \"C:\\\\Users\\\\frava\\\\Documents\\\\Unreal Projects\\\\EthericConcrete 5.7\" log -1 --pretty=format:\"%H %an %ai %s\")",
+      "Bash(git -C \"C:\\\\Users\\\\frava\\\\Documents\\\\Unreal Projects\\\\EthericConcrete 5.7\" config user.name)",
+      "Bash(git -C \"C:\\\\Users\\\\frava\\\\Documents\\\\Unreal Projects\\\\EthericConcrete 5.7\" config user.email)",
+      "Bash(find:*)",
+      "Bash(dir:*)",
+      "Bash(git -C \"C:/Users/frava/Documents/Unreal Projects/EthericConcrete 5.7\" log --oneline -20)",
+      "Bash(git -C \"C:/Users/frava/Documents/Unreal Projects/EthericConcrete 5.7\" show --stat HEAD)",
+      "Bash(git -C \"C:/Users/frava/Documents/Unreal Projects/EthericConcrete 5.7\" diff --name-only HEAD~3 HEAD)",
+      "Bash(git -C \"C:/Users/frava/Documents/Unreal Projects/EthericConcrete 5.7\" log --oneline EC-121-Système-d''animation..master -- Content/Blueprints/Procedural/)",
+      "Bash(git -C \"C:/Users/frava/Documents/Unreal Projects/EthericConcrete 5.7\" diff master HEAD -- Content/Blueprints/Procedural/)",
+      "Bash(git -C \"C:/Users/frava/Documents/Unreal Projects/EthericConcrete 5.7\" log --all --oneline --follow -- \"Content/Blueprints/Procedural/Utils/BP_RoomWrapper.uasset\")",
+      "Bash(git -C \"C:/Users/frava/Documents/Unreal Projects/EthericConcrete 5.7\" log --all --oneline --follow -- \"Content/Blueprints/Procedural/BP_DungeonManager.uasset\")",
+      "Bash(git -C \"C:/Users/frava/Documents/Unreal Projects/EthericConcrete 5.7\" status --porcelain)",
+      "Bash(git -C \"C:/Users/frava/Documents/Unreal Projects/EthericConcrete 5.7\" log --all --oneline --follow -- \"Content/Blueprints/Procedural/BP_DungeonGeneratorNEW.uasset\")",
+      "Bash(test:*)",
+      "Bash(\"C:/Program Files/Epic Games/UE_5.7/Engine/Build/BatchFiles/Build.bat\" EthericConcreteEditor:*)",
+      "Bash(cmd.exe:*)",
+      "Bash(head:*)",
+      "Bash(python3:*)",
+      "Bash(python:*)"
+    ]
+  }
+}

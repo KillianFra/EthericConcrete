@@ -37,7 +37,7 @@
 					"EthericConcrete",
 					"Win64",
 					"Debug",
-					"C:\\Users\\frava\\Documents\\GitHub\\EthericConcrete 5.7\\EthericConcrete.uproject",
+					"C:\\Users\\frava\\Documents\\Unreal Projects\\EthericConcrete 5.7\\EthericConcrete.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -54,7 +54,7 @@
 					"EthericConcrete",
 					"Win64",
 					"Debug",
-					"C:\\Users\\frava\\Documents\\GitHub\\EthericConcrete 5.7\\EthericConcrete.uproject",
+					"C:\\Users\\frava\\Documents\\Unreal Projects\\EthericConcrete 5.7\\EthericConcrete.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -74,7 +74,7 @@
 					"EthericConcrete",
 					"Win64",
 					"Debug",
-					"C:\\Users\\frava\\Documents\\GitHub\\EthericConcrete 5.7\\EthericConcrete.uproject",
+					"C:\\Users\\frava\\Documents\\Unreal Projects\\EthericConcrete 5.7\\EthericConcrete.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -91,7 +91,7 @@
 					"EthericConcrete",
 					"Win64",
 					"DebugGame",
-					"C:\\Users\\frava\\Documents\\GitHub\\EthericConcrete 5.7\\EthericConcrete.uproject",
+					"C:\\Users\\frava\\Documents\\Unreal Projects\\EthericConcrete 5.7\\EthericConcrete.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -108,7 +108,7 @@
 					"EthericConcrete",
 					"Win64",
 					"DebugGame",
-					"C:\\Users\\frava\\Documents\\GitHub\\EthericConcrete 5.7\\EthericConcrete.uproject",
+					"C:\\Users\\frava\\Documents\\Unreal Projects\\EthericConcrete 5.7\\EthericConcrete.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -128,7 +128,7 @@
 					"EthericConcrete",
 					"Win64",
 					"DebugGame",
-					"C:\\Users\\frava\\Documents\\GitHub\\EthericConcrete 5.7\\EthericConcrete.uproject",
+					"C:\\Users\\frava\\Documents\\Unreal Projects\\EthericConcrete 5.7\\EthericConcrete.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -145,7 +145,7 @@
 					"EthericConcrete",
 					"Win64",
 					"Development",
-					"C:\\Users\\frava\\Documents\\GitHub\\EthericConcrete 5.7\\EthericConcrete.uproject",
+					"C:\\Users\\frava\\Documents\\Unreal Projects\\EthericConcrete 5.7\\EthericConcrete.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -162,7 +162,7 @@
 					"EthericConcrete",
 					"Win64",
 					"Development",
-					"C:\\Users\\frava\\Documents\\GitHub\\EthericConcrete 5.7\\EthericConcrete.uproject",
+					"C:\\Users\\frava\\Documents\\Unreal Projects\\EthericConcrete 5.7\\EthericConcrete.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -182,7 +182,7 @@
 					"EthericConcrete",
 					"Win64",
 					"Development",
-					"C:\\Users\\frava\\Documents\\GitHub\\EthericConcrete 5.7\\EthericConcrete.uproject",
+					"C:\\Users\\frava\\Documents\\Unreal Projects\\EthericConcrete 5.7\\EthericConcrete.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -199,7 +199,7 @@
 					"EthericConcrete",
 					"Win64",
 					"Test",
-					"C:\\Users\\frava\\Documents\\GitHub\\EthericConcrete 5.7\\EthericConcrete.uproject",
+					"C:\\Users\\frava\\Documents\\Unreal Projects\\EthericConcrete 5.7\\EthericConcrete.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -216,7 +216,7 @@
 					"EthericConcrete",
 					"Win64",
 					"Test",
-					"C:\\Users\\frava\\Documents\\GitHub\\EthericConcrete 5.7\\EthericConcrete.uproject",
+					"C:\\Users\\frava\\Documents\\Unreal Projects\\EthericConcrete 5.7\\EthericConcrete.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -236,7 +236,7 @@
 					"EthericConcrete",
 					"Win64",
 					"Test",
-					"C:\\Users\\frava\\Documents\\GitHub\\EthericConcrete 5.7\\EthericConcrete.uproject",
+					"C:\\Users\\frava\\Documents\\Unreal Projects\\EthericConcrete 5.7\\EthericConcrete.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -253,7 +253,7 @@
 					"EthericConcrete",
 					"Win64",
 					"Shipping",
-					"C:\\Users\\frava\\Documents\\GitHub\\EthericConcrete 5.7\\EthericConcrete.uproject",
+					"C:\\Users\\frava\\Documents\\Unreal Projects\\EthericConcrete 5.7\\EthericConcrete.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -270,7 +270,7 @@
 					"EthericConcrete",
 					"Win64",
 					"Shipping",
-					"C:\\Users\\frava\\Documents\\GitHub\\EthericConcrete 5.7\\EthericConcrete.uproject",
+					"C:\\Users\\frava\\Documents\\Unreal Projects\\EthericConcrete 5.7\\EthericConcrete.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -290,7 +290,7 @@
 					"EthericConcrete",
 					"Win64",
 					"Shipping",
-					"C:\\Users\\frava\\Documents\\GitHub\\EthericConcrete 5.7\\EthericConcrete.uproject",
+					"C:\\Users\\frava\\Documents\\Unreal Projects\\EthericConcrete 5.7\\EthericConcrete.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -307,7 +307,7 @@
 					"EthericConcreteEditor",
 					"Win64",
 					"Debug",
-					"C:\\Users\\frava\\Documents\\GitHub\\EthericConcrete 5.7\\EthericConcrete.uproject",
+					"C:\\Users\\frava\\Documents\\Unreal Projects\\EthericConcrete 5.7\\EthericConcrete.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -324,7 +324,7 @@
 					"EthericConcreteEditor",
 					"Win64",
 					"Debug",
-					"C:\\Users\\frava\\Documents\\GitHub\\EthericConcrete 5.7\\EthericConcrete.uproject",
+					"C:\\Users\\frava\\Documents\\Unreal Projects\\EthericConcrete 5.7\\EthericConcrete.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -344,7 +344,7 @@
 					"EthericConcreteEditor",
 					"Win64",
 					"Debug",
-					"C:\\Users\\frava\\Documents\\GitHub\\EthericConcrete 5.7\\EthericConcrete.uproject",
+					"C:\\Users\\frava\\Documents\\Unreal Projects\\EthericConcrete 5.7\\EthericConcrete.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -361,7 +361,7 @@
 					"EthericConcreteEditor",
 					"Win64",
 					"DebugGame",
-					"C:\\Users\\frava\\Documents\\GitHub\\EthericConcrete 5.7\\EthericConcrete.uproject",
+					"C:\\Users\\frava\\Documents\\Unreal Projects\\EthericConcrete 5.7\\EthericConcrete.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -378,7 +378,7 @@
 					"EthericConcreteEditor",
 					"Win64",
 					"DebugGame",
-					"C:\\Users\\frava\\Documents\\GitHub\\EthericConcrete 5.7\\EthericConcrete.uproject",
+					"C:\\Users\\frava\\Documents\\Unreal Projects\\EthericConcrete 5.7\\EthericConcrete.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -398,7 +398,7 @@
 					"EthericConcreteEditor",
 					"Win64",
 					"DebugGame",
-					"C:\\Users\\frava\\Documents\\GitHub\\EthericConcrete 5.7\\EthericConcrete.uproject",
+					"C:\\Users\\frava\\Documents\\Unreal Projects\\EthericConcrete 5.7\\EthericConcrete.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -415,7 +415,7 @@
 					"EthericConcreteEditor",
 					"Win64",
 					"Development",
-					"C:\\Users\\frava\\Documents\\GitHub\\EthericConcrete 5.7\\EthericConcrete.uproject",
+					"C:\\Users\\frava\\Documents\\Unreal Projects\\EthericConcrete 5.7\\EthericConcrete.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -432,7 +432,7 @@
 					"EthericConcreteEditor",
 					"Win64",
 					"Development",
-					"C:\\Users\\frava\\Documents\\GitHub\\EthericConcrete 5.7\\EthericConcrete.uproject",
+					"C:\\Users\\frava\\Documents\\Unreal Projects\\EthericConcrete 5.7\\EthericConcrete.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -452,7 +452,7 @@
 					"EthericConcreteEditor",
 					"Win64",
 					"Development",
-					"C:\\Users\\frava\\Documents\\GitHub\\EthericConcrete 5.7\\EthericConcrete.uproject",
+					"C:\\Users\\frava\\Documents\\Unreal Projects\\EthericConcrete 5.7\\EthericConcrete.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -469,7 +469,7 @@
 			{
 				"name": "Launch EthericConcrete (Debug)",
 				"request": "launch",
-				"program": "C:\\Users\\frava\\Documents\\GitHub\\EthericConcrete 5.7\\Binaries\\Win64\\UnrealGame-Win64-Debug.exe",
+				"program": "C:\\Users\\frava\\Documents\\Unreal Projects\\EthericConcrete 5.7\\Binaries\\Win64\\UnrealGame-Win64-Debug.exe",
 				"preLaunchTask": "EthericConcrete Win64 Debug Build",
 				"args": [
 				],
@@ -485,7 +485,7 @@
 			{
 				"name": "Launch EthericConcrete (DebugGame)",
 				"request": "launch",
-				"program": "C:\\Users\\frava\\Documents\\GitHub\\EthericConcrete 5.7\\Binaries\\Win64\\UnrealGame-Win64-DebugGame.exe",
+				"program": "C:\\Users\\frava\\Documents\\Unreal Projects\\EthericConcrete 5.7\\Binaries\\Win64\\UnrealGame-Win64-DebugGame.exe",
 				"preLaunchTask": "EthericConcrete Win64 DebugGame Build",
 				"args": [
 				],
@@ -501,7 +501,7 @@
 			{
 				"name": "Launch EthericConcrete (Development)",
 				"request": "launch",
-				"program": "C:\\Users\\frava\\Documents\\GitHub\\EthericConcrete 5.7\\Binaries\\Win64\\UnrealGame.exe",
+				"program": "C:\\Users\\frava\\Documents\\Unreal Projects\\EthericConcrete 5.7\\Binaries\\Win64\\UnrealGame.exe",
 				"preLaunchTask": "EthericConcrete Win64 Development Build",
 				"args": [
 				],
@@ -517,7 +517,7 @@
 			{
 				"name": "Launch EthericConcrete (Test)",
 				"request": "launch",
-				"program": "C:\\Users\\frava\\Documents\\GitHub\\EthericConcrete 5.7\\Binaries\\Win64\\UnrealGame-Win64-Test.exe",
+				"program": "C:\\Users\\frava\\Documents\\Unreal Projects\\EthericConcrete 5.7\\Binaries\\Win64\\UnrealGame-Win64-Test.exe",
 				"preLaunchTask": "EthericConcrete Win64 Test Build",
 				"args": [
 				],
@@ -533,7 +533,7 @@
 			{
 				"name": "Launch EthericConcrete (Shipping)",
 				"request": "launch",
-				"program": "C:\\Users\\frava\\Documents\\GitHub\\EthericConcrete 5.7\\Binaries\\Win64\\UnrealGame-Win64-Shipping.exe",
+				"program": "C:\\Users\\frava\\Documents\\Unreal Projects\\EthericConcrete 5.7\\Binaries\\Win64\\UnrealGame-Win64-Shipping.exe",
 				"preLaunchTask": "EthericConcrete Win64 Shipping Build",
 				"args": [
 				],
@@ -552,7 +552,7 @@
 				"program": "C:\\Program Files\\Epic Games\\UE_5.7\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-Debug.exe",
 				"preLaunchTask": "EthericConcreteEditor Win64 Debug Build",
 				"args": [
-					"C:\\Users\\frava\\Documents\\GitHub\\EthericConcrete 5.7\\EthericConcrete.uproject"
+					"C:\\Users\\frava\\Documents\\Unreal Projects\\EthericConcrete 5.7\\EthericConcrete.uproject"
 				],
 				"cwd": "C:\\Program Files\\Epic Games\\UE_5.7",
 				"stopAtEntry": false,
@@ -569,7 +569,7 @@
 				"program": "C:\\Program Files\\Epic Games\\UE_5.7\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-DebugGame.exe",
 				"preLaunchTask": "EthericConcreteEditor Win64 DebugGame Build",
 				"args": [
-					"C:\\Users\\frava\\Documents\\GitHub\\EthericConcrete 5.7\\EthericConcrete.uproject"
+					"C:\\Users\\frava\\Documents\\Unreal Projects\\EthericConcrete 5.7\\EthericConcrete.uproject"
 				],
 				"cwd": "C:\\Program Files\\Epic Games\\UE_5.7",
 				"stopAtEntry": false,
@@ -586,7 +586,7 @@
 				"program": "C:\\Program Files\\Epic Games\\UE_5.7\\Engine\\Binaries\\Win64\\UnrealEditor.exe",
 				"preLaunchTask": "EthericConcreteEditor Win64 Development Build",
 				"args": [
-					"C:\\Users\\frava\\Documents\\GitHub\\EthericConcrete 5.7\\EthericConcrete.uproject"
+					"C:\\Users\\frava\\Documents\\Unreal Projects\\EthericConcrete 5.7\\EthericConcrete.uproject"
 				],
 				"cwd": "C:\\Program Files\\Epic Games\\UE_5.7",
 				"stopAtEntry": false,
@@ -606,7 +606,7 @@
 				"args": [
 					"-projectfiles",
 					"-vscode",
-					"-project=C:\\Users\\frava\\Documents\\GitHub\\EthericConcrete 5.7\\EthericConcrete.uproject",
+					"-project=C:\\Users\\frava\\Documents\\Unreal Projects\\EthericConcrete 5.7\\EthericConcrete.uproject",
 					"-game",
 					"-engine",
 					"-dotnet"
