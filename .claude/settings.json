@@ -1,0 +1,27 @@
+{
+    "mcpServers": {
+        "unreal-engine": {
+            "command": "npx",
+            "args": [
+                "unreal-engine-mcp-server"
+            ],
+            "env": {
+                "UE_PROJECT_PATH": "C:/Users/frava/Documents/Unreal Projects/EthericConcrete 5.7"
+            }
+        }
+    },
+    "disabledTools": [
+        "mcp__unreal-engine__manage_audio",
+        "mcp__unreal-engine__manage_widget_authoring",
+        "mcp__unreal-engine__manage_texture",
+        "mcp__unreal-engine__manage_material_authoring",
+        "mcp__unreal-engine__manage_geometry",
+        "mcp__unreal-engine__manage_lighting",
+        "mcp__unreal-engine__manage_sequence",
+        "mcp__unreal-engine__manage_splines",
+        "mcp__unreal-engine__manage_performance",
+        "mcp__unreal-engine__manage_sessions",
+        "mcp__unreal-engine__manage_tools",
+        "mcp__unreal-engine__manage_networking"
+    ]
+}

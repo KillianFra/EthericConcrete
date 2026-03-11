@@ -22,7 +22,18 @@
       "Bash(cmd.exe:*)",
       "Bash(head:*)",
       "Bash(python3:*)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(ls:*)",
+      "Bash(Engine/Build/BatchFiles/Build.bat EthericConcreteEditor:*)",
+      "Bash(\"/c/Program Files/Epic Games/UE_5.7/Engine/Build/BatchFiles/Build.bat\" EthericConcreteEditor:*)",
+      "Read(//c/Users/frava/.claude/**)",
+      "Bash(node --version && npx --version 2>&1)",
+      "Bash(cd \"C:/Users/frava/Documents/Unreal Projects/EthericConcrete 5.7\" && claude mcp add unreal-engine -s local -e UE_PROJECT_PATH=\"C:/Users/frava/Documents/Unreal Projects/EthericConcrete 5.7\" -- npx -y unreal-engine-mcp-server 2>&1)",
+      "Bash(npx unreal-engine-mcp-server:*)",
+      "mcp__unreal-engine__control_editor",
+      "mcp__unreal-engine__manage_level",
+      "mcp__unreal-engine__manage_lighting",
+      "mcp__unreal-engine__control_actor"
     ]
   }
 }
