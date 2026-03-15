@@ -33,7 +33,14 @@
       "mcp__unreal-engine__control_editor",
       "mcp__unreal-engine__manage_level",
       "mcp__unreal-engine__manage_lighting",
-      "mcp__unreal-engine__control_actor"
+      "mcp__unreal-engine__control_actor",
+      "mcp__unreal-engine__inspect",
+      "mcp__unreal-engine__manage_blueprint",
+      "Bash(cmd.exe /c \"\\\\\"C:\\\\\\\\Program Files\\\\\\\\Epic Games\\\\\\\\UE_5.7\\\\\\\\Engine\\\\\\\\Build\\\\\\\\BatchFiles\\\\\\\\Build.bat\\\\\" EthericConcreteEditor Win64 Development \\\\\"C:\\\\\\\\Users\\\\\\\\frava\\\\\\\\Documents\\\\\\\\Unreal Projects\\\\\\\\EthericConcrete 5.7\\\\\\\\EthericConcrete.uproject\\\\\" -WaitMutex\" 2>&1; echo \"EXIT:$?\")",
+      "Bash(\"C:/Program Files/Epic Games/UE_5.7/Engine/Build/BatchFiles/Build.bat\" EthericConcreteEditor Win64 Development \"C:/Users/frava/Documents/Unreal Projects/EthericConcrete 5.7/EthericConcrete.uproject\" -WaitMutex 2>&1)",
+      "Bash(powershell -Command \"& 'C:\\\\\\\\Program Files\\\\\\\\Epic Games\\\\\\\\UE_5.7\\\\\\\\Engine\\\\\\\\Build\\\\\\\\BatchFiles\\\\\\\\Build.bat' EthericConcreteEditor Win64 Development 'C:\\\\\\\\Users\\\\\\\\frava\\\\\\\\Documents\\\\\\\\Unreal Projects\\\\\\\\EthericConcrete 5.7\\\\\\\\EthericConcrete.uproject' -WaitMutex 2>&1\")",
+      "Bash(cd \"C:/Users/frava/Documents/Unreal Projects/EthericConcrete 5.7\" && \"C:/Program Files/Epic Games/UE_5.7/Engine/Build/BatchFiles/Build.bat\" EthericConcreteEditor Win64 Development \"EthericConcrete.uproject\" -WaitMutex 2>&1 | tail -30)",
+      "Bash(\"C:/Program Files/Epic Games/UE_5.7/Engine/Build/BatchFiles/Build.bat\" EthericConcreteEditor Win64 Development \"C:/Users/frava/Documents/Unreal Projects/EthericConcrete 5.7/EthericConcrete.uproject\" -WaitMutex 2>&1 | tail -30)"
     ]
   }
 }
