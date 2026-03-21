@@ -119,6 +119,7 @@ void AETHDungeonManager::SetTotalExpectedRooms(int32 Total)
 	bAllRoomsReadyFired   = false;
 	Rooms.Empty();
 	PendingAdjacency.Empty();
+	DoorConnections.Empty();
 
 	UE_LOG(LogETHDungeon, Log, TEXT("SetTotalExpectedRooms: expecting %d rooms"), Total);
 }
@@ -287,7 +288,7 @@ void AETHDungeonManager::OnPlayerEnterRoom(int32 RoomID)
 	{
 		SetRoomState(RoomID, EETHRoomState::Combat);
 	}
-	else
+	else  if (Entry->State == EETHRoomState::Undiscovered || Entry->State == EETHRoomState::Discovered)
 	{
 		SetRoomState(RoomID, EETHRoomState::Active);
 	}
@@ -425,6 +426,25 @@ bool AETHDungeonManager::IsPlayerInRoom(int32 RoomID) const
 {
 	const FETHRoomEntry* Entry = Rooms.Find(RoomID);
 	return Entry ? Entry->bPlayerPresent : false;
+}
+
+TArray<FETHRoomDebugData> AETHDungeonManager::GetMinimapData() const
+{
+	TArray<FETHRoomDebugData> Result;
+	Result.Reserve(Rooms.Num());
+
+	for (const auto& Pair : Rooms)
+	{
+		FETHRoomDebugData Data;
+		Data.RoomID          = Pair.Key;
+		Data.RoomState       = (uint8)Pair.Value.State;
+		Data.WorldLocation   = Pair.Value.WorldLocation;
+		Data.AdjacentRoomIDs = Pair.Value.AdjacentRoomIDs;
+		Data.DoorCount       = Pair.Value.DoorCount;
+		Result.Add(Data);
+	}
+
+	return Result;
 }
 
 // ---------------------------------------------------------------------------
@@ -756,6 +776,15 @@ void AETHDungeonManager::SetRoomState(int32 RoomID, EETHRoomState NewState)
 
 	OnRoomStateChanged.Broadcast(RoomID, NewState);
 	BP_OnRoomStateChanged(RoomID, NewState);
+
+	// Refresh all doors connected to this room (centralized AND logic)
+	RefreshDoorsForRoom(RoomID);
+
+	// Notify adjacent rooms so they can re-evaluate their shared door with this room
+	for (int32 AdjID : Entry->AdjacentRoomIDs)
+	{
+		BP_OnNeighborStateChanged(AdjID, RoomID, NewState);
+	}
 }
 
 void AETHDungeonManager::DiscoverAdjacentRooms(int32 RoomID)
@@ -820,5 +849,125 @@ void AETHDungeonManager::CheckAllRoomsReady()
 		UE_LOG(LogETHDungeon, Log, TEXT("CheckAllRoomsReady: all %d rooms registered — firing BP_OnAllRoomsReady"),
 		       TotalExpectedRooms);
 		BP_OnAllRoomsReady();
+	}
+}
+
+// ---------------------------------------------------------------------------
+// Door Connection System
+// ---------------------------------------------------------------------------
+
+bool AETHDungeonManager::IsOpenState(EETHRoomState State)
+{
+	return State == EETHRoomState::Cleared;
+}
+
+static bool IsBlockingState(EETHRoomState State)
+{
+	return State == EETHRoomState::Active
+	    || State == EETHRoomState::Combat
+	    || State == EETHRoomState::Boss
+	    || State == EETHRoomState::Locked;
+}
+
+void AETHDungeonManager::RegisterPendingDoorConnection(int32 RoomID_A, int32 RoomID_B, FVector ConnectorWorldPos)
+{
+	if (RoomID_A == RoomID_B) { return; }
+
+	// Avoid duplicate connections
+	for (const FETHDoorConnection& Conn : DoorConnections)
+	{
+		if ((Conn.RoomID_A == RoomID_A && Conn.RoomID_B == RoomID_B) ||
+		    (Conn.RoomID_A == RoomID_B && Conn.RoomID_B == RoomID_A))
+		{
+			return;
+		}
+	}
+
+	FETHDoorConnection NewConn;
+	NewConn.RoomID_A           = RoomID_A;
+	NewConn.RoomID_B           = RoomID_B;
+	NewConn.ConnectorWorldPos  = ConnectorWorldPos;
+	DoorConnections.Add(NewConn);
+
+	if (bDebugMode)
+	{
+		UE_LOG(LogETHDungeon, Log, TEXT("RegisterPendingDoorConnection: Room %d ↔ Room %d at %s"),
+		       RoomID_A, RoomID_B, *ConnectorWorldPos.ToString());
+	}
+}
+
+void AETHDungeonManager::AssignDoorActorToConnection(int32 RoomID, AActor* DoorActor,
+                                                      FVector DoorWorldPos, float Tolerance)
+{
+	if (!DoorActor) { return; }
+
+	UE_LOG(LogETHDungeon, Log,
+	       TEXT("AssignDoorActorToConnection: called for Room %d | Door='%s' | Pos=%s | Tolerance=%.0f | DoorConnections.Num()=%d"),
+	       RoomID, *DoorActor->GetName(), *DoorWorldPos.ToString(), Tolerance, DoorConnections.Num());
+
+	const float ToleranceSq = Tolerance * Tolerance;
+
+	for (FETHDoorConnection& Conn : DoorConnections)
+	{
+		const float DistSq = FVector::DistSquared(Conn.ConnectorWorldPos, DoorWorldPos);
+		UE_LOG(LogETHDungeon, Log,
+		       TEXT("  Checking conn Room %d↔%d | HasActor=%d | MatchesRoom=%d | DistSq=%.0f (need < %.0f)"),
+		       Conn.RoomID_A, Conn.RoomID_B,
+		       Conn.DoorActor.IsValid() ? 1 : 0,
+		       (Conn.RoomID_A == RoomID || Conn.RoomID_B == RoomID) ? 1 : 0,
+		       DistSq, ToleranceSq);
+
+		if (Conn.DoorActor.IsValid()) { continue; }
+		if (Conn.RoomID_A != RoomID && Conn.RoomID_B != RoomID) { continue; }
+
+		if (DistSq < ToleranceSq)
+		{
+			Conn.DoorActor = DoorActor;
+
+			UE_LOG(LogETHDungeon, Log, TEXT("AssignDoorActorToConnection: MATCHED Door '%s' → Room %d ↔ Room %d"),
+			       *DoorActor->GetName(), Conn.RoomID_A, Conn.RoomID_B);
+
+			RefreshDoorsForRoom(RoomID);
+			return;
+		}
+	}
+
+	UE_LOG(LogETHDungeon, Warning,
+	       TEXT("AssignDoorActorToConnection: NO MATCH for Room %d near %s (tol=%.0f) — %d connections checked"),
+	       RoomID, *DoorWorldPos.ToString(), Tolerance, DoorConnections.Num());
+}
+
+bool AETHDungeonManager::ShouldDoorBeOpen(int32 RoomID_A, int32 RoomID_B) const
+{
+	const EETHRoomState StateA = GetRoomState(RoomID_A);
+	const EETHRoomState StateB = GetRoomState(RoomID_B);
+	return (IsOpenState(StateA) || IsOpenState(StateB))
+	    && !IsBlockingState(StateA) && !IsBlockingState(StateB);
+}
+
+void AETHDungeonManager::RefreshDoorsForRoom(int32 RoomID)
+{
+	UE_LOG(LogETHDungeon, Log, TEXT("RefreshDoorsForRoom: Room %d | DoorConnections.Num()=%d"),
+	       RoomID, DoorConnections.Num());
+
+	for (const FETHDoorConnection& Conn : DoorConnections)
+	{
+		if (Conn.RoomID_A != RoomID && Conn.RoomID_B != RoomID) { continue; }
+		if (!Conn.DoorActor.IsValid()) { continue; }
+
+		const EETHRoomState StateA = GetRoomState(Conn.RoomID_A);
+		const EETHRoomState StateB = GetRoomState(Conn.RoomID_B);
+		const bool bOpenA = IsOpenState(StateA);
+		const bool bOpenB = IsOpenState(StateB);
+		const bool bOpen  = (bOpenA || bOpenB) && !IsBlockingState(StateA) && !IsBlockingState(StateB);
+
+		UE_LOG(LogETHDungeon, Log,
+		       TEXT("  Door '%s' Room%d(%d)=%d Room%d(%d)=%d → %s"),
+		       *Conn.DoorActor.Get()->GetName(),
+		       Conn.RoomID_A, (int32)GetRoomState(Conn.RoomID_A), bOpenA ? 1 : 0,
+		       Conn.RoomID_B, (int32)GetRoomState(Conn.RoomID_B), bOpenB ? 1 : 0,
+		       bOpen ? TEXT("OPEN") : TEXT("CLOSE"));
+
+		BP_SetDoorOpen(Conn.DoorActor.Get(), bOpen);
 	}
 }

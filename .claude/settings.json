@@ -1,13 +1,13 @@
 {
     "mcpServers": {
-        "unreal-engine": {
-            "command": "npx",
+        "unrealMCP": {
+            "command": "uv",
             "args": [
-                "unreal-engine-mcp-server"
-            ],
-            "env": {
-                "UE_PROJECT_PATH": "C:/Users/frava/Documents/Unreal Projects/EthericConcrete 5.7"
-            }
+                "--directory",
+                "C:\\Users\\frava\\Documents\\personal\\unreal-mcp2\\Python",
+                "run",
+                "unreal_mcp_server.py"
+            ]
         }
     },
     "disabledTools": [

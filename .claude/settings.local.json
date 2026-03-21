@@ -40,7 +40,38 @@
       "Bash(\"C:/Program Files/Epic Games/UE_5.7/Engine/Build/BatchFiles/Build.bat\" EthericConcreteEditor Win64 Development \"C:/Users/frava/Documents/Unreal Projects/EthericConcrete 5.7/EthericConcrete.uproject\" -WaitMutex 2>&1)",
       "Bash(powershell -Command \"& 'C:\\\\\\\\Program Files\\\\\\\\Epic Games\\\\\\\\UE_5.7\\\\\\\\Engine\\\\\\\\Build\\\\\\\\BatchFiles\\\\\\\\Build.bat' EthericConcreteEditor Win64 Development 'C:\\\\\\\\Users\\\\\\\\frava\\\\\\\\Documents\\\\\\\\Unreal Projects\\\\\\\\EthericConcrete 5.7\\\\\\\\EthericConcrete.uproject' -WaitMutex 2>&1\")",
       "Bash(cd \"C:/Users/frava/Documents/Unreal Projects/EthericConcrete 5.7\" && \"C:/Program Files/Epic Games/UE_5.7/Engine/Build/BatchFiles/Build.bat\" EthericConcreteEditor Win64 Development \"EthericConcrete.uproject\" -WaitMutex 2>&1 | tail -30)",
-      "Bash(\"C:/Program Files/Epic Games/UE_5.7/Engine/Build/BatchFiles/Build.bat\" EthericConcreteEditor Win64 Development \"C:/Users/frava/Documents/Unreal Projects/EthericConcrete 5.7/EthericConcrete.uproject\" -WaitMutex 2>&1 | tail -30)"
+      "Bash(\"C:/Program Files/Epic Games/UE_5.7/Engine/Build/BatchFiles/Build.bat\" EthericConcreteEditor Win64 Development \"C:/Users/frava/Documents/Unreal Projects/EthericConcrete 5.7/EthericConcrete.uproject\" -WaitMutex 2>&1 | tail -30)",
+      "Bash(grep -E \"\\\\.\\(h|cpp\\)$\")",
+      "Bash(\"c:/Program Files/Epic Games/UE_5.7/Engine/Build/BatchFiles/Build.bat\" EthericConcreteEditor Win64 Development \"c:/Users/frava/Documents/Unreal Projects/EthericConcrete 5.7/EthericConcrete.uproject\" -WaitMutex)",
+      "Bash(cmd /c \"\"\"c:/Program Files/Epic Games/UE_5.7/Engine/Build/BatchFiles/Build.bat\"\" EthericConcreteEditor Win64 Development \"\"c:/Users/frava/Documents/Unreal Projects/EthericConcrete 5.7/EthericConcrete.uproject\"\" -WaitMutex > \"\"c:/Users/frava/Documents/Unreal Projects/EthericConcrete 5.7/Saved/build_output.txt\"\" 2>&1\")",
+      "WebFetch(domain:github.com)",
+      "Bash(grep:*)",
+      "Bash(cd:*)",
+      "Read(//c/Users/frava/Documents/personal/unreal-mcp2/Python/**)",
+      "Read(//c/Users/frava/AppData/Roaming/Claude/**)",
+      "mcp__unrealMCP__read_blueprint",
+      "mcp__unrealMCP__find_blueprint_nodes",
+      "mcp__unrealMCP__add_blueprint_function_node",
+      "mcp__unrealMCP__add_blueprint_event_node",
+      "mcp__unrealMCP__connect_blueprint_nodes",
+      "mcp__unrealMCP__compile_blueprint",
+      "Bash(\"C:\\\\Program Files\\\\Epic Games\\\\UE_5.7\\\\Engine\\\\Build\\\\BatchFiles\\\\Build.bat\" EthericConcreteEditor Win64 Development \"C:\\\\Users\\\\frava\\\\Documents\\\\Unreal Projects\\\\EthericConcrete 5.7\\\\EthericConcrete.uproject\" -WaitMutex 2>&1 | tail -20)",
+      "Bash(cmd /c \"\"\"C:\\\\Program Files\\\\Epic Games\\\\UE_5.7\\\\Engine\\\\Build\\\\BatchFiles\\\\Build.bat\"\" EthericConcreteEditor Win64 Development \"\"C:\\\\Users\\\\frava\\\\Documents\\\\Unreal Projects\\\\EthericConcrete 5.7\\\\EthericConcrete.uproject\"\" -WaitMutex > C:\\\\Users\\\\frava\\\\build_output.txt 2>&1\")",
+      "Read(//c/Users/frava/**)",
+      "mcp__unrealMCP__read_blueprint_function",
+      "Bash(jq -r .[0].text)",
+      "Read(//tmp/**)",
+      "Bash(jq:*)",
+      "Bash(python3 -c \"import sys,json; data=json.load\\(sys.stdin\\); [print\\(v.get\\(''''node_title'''',''''''''\\),v.get\\(''''node_id'''',''''''''\\)\\) for v in data.get\\(''''variables'''',[]\\) if ''''dungeon'''' in v.get\\(''''node_title'''',''''''''\\).lower\\(\\) or ''''manager'''' in v.get\\(''''node_title'''',''''''''\\).lower\\(\\)]\")",
+      "Bash(\"C:/Program Files/Epic Games/UE_5.7/Engine/Build/BatchFiles/Build.bat\" EthericConcreteEditor Win64 Development \"C:/Users/frava/Documents/Unreal Projects/EthericConcrete 5.7/EthericConcrete.uproject\" -WaitMutex -FromMsBuild)",
+      "mcp__unrealMCP__add_node_to_function_graph",
+      "Bash(\"C:\\\\Program Files\\\\Epic Games\\\\UE_5.7\\\\Engine\\\\Build\\\\BatchFiles\\\\Build.bat\" EthericConcreteEditor Win64 Development \"C:\\\\Users\\\\frava\\\\Documents\\\\Unreal Projects\\\\EthericConcrete 5.7\\\\EthericConcrete.uproject\" -WaitMutex -FromMsBuild)",
+      "Bash(cmd /c \"\"\"C:\\\\Program Files\\\\Epic Games\\\\UE_5.7\\\\Engine\\\\Build\\\\BatchFiles\\\\Build.bat\"\" EthericConcreteEditor Win64 Development \"\"C:\\\\Users\\\\frava\\\\Documents\\\\Unreal Projects\\\\EthericConcrete 5.7\\\\EthericConcrete.uproject\"\" -WaitMutex -FromMsBuild > C:\\\\Users\\\\frava\\\\build_output.txt 2>&1\")",
+      "Bash(powershell -Command \"& 'C:\\\\Program Files\\\\Epic Games\\\\UE_5.7\\\\Engine\\\\Build\\\\BatchFiles\\\\Build.bat' EthericConcreteEditor Win64 Development 'C:\\\\Users\\\\frava\\\\Documents\\\\Unreal Projects\\\\EthericConcrete 5.7\\\\EthericConcrete.uproject' -WaitMutex -FromMsBuild 2>&1 | Select-Object -Last 20\" 2>&1)"
     ]
-  }
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "unrealMCP"
+  ]
 }

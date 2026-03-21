@@ -74,6 +74,12 @@ Spell.Fireball                            — Fireball ability
 - **C++ for systems, Blueprints for content** — Core mechanics in C++ with `BlueprintImplementableEvent`/`BlueprintReadOnly` for BP extensibility.
 - **Network replication ready** — Attributes use `OnRep_` functions and `GetLifetimeReplicatedProps`.
 
+
+## Search / Modification in Blueprints
+
+Use the MCP server when the informations you're looking for is located in blueprints
+
+if any important modifications involve blueprints this step is crucial, you may be able to create a new python commands in the MCP server if this one isnt available to help you control the blueprint edition 
 ## Git Workflow
 
 - **Main branch**: `master`

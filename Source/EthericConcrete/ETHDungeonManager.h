@@ -45,6 +45,19 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FETHOnRoomStateChanged, int32, Room
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FETHOnRoomChanged, int32, NewRoomID, int32, PreviousRoomID);
 
 // ---------------------------------------------------------------------------
+// Internal door-connection data (plain C++ struct — not exposed to BP)
+// ---------------------------------------------------------------------------
+
+/** Models a bidirectional door link between two rooms with its actor reference. */
+struct FETHDoorConnection
+{
+	int32 RoomID_A = -1;
+	int32 RoomID_B = -1;
+	TWeakObjectPtr<AActor> DoorActor;
+	FVector ConnectorWorldPos = FVector::ZeroVector;
+};
+
+// ---------------------------------------------------------------------------
 // Internal per-room data (plain C++ struct — not exposed to BP)
 // ---------------------------------------------------------------------------
 
@@ -178,6 +191,10 @@ public:
 	UFUNCTION(BlueprintPure, Category = "Dungeon")
 	bool IsPlayerInRoom(int32 RoomID) const;
 
+	/** Returns a snapshot of all registered rooms for minimap / HUD rendering. */
+	UFUNCTION(BlueprintPure, Category = "Dungeon|Minimap")
+	TArray<FETHRoomDebugData> GetMinimapData() const;
+
 	UFUNCTION(BlueprintPure, Category = "Dungeon")
 	int32 GetCurrentRoomID() const { return CurrentRoomID; }
 
@@ -222,6 +239,47 @@ public:
 	UFUNCTION(BlueprintImplementableEvent, Category = "Dungeon")
 	void BP_OnAllRoomsReady();
 
+	/**
+	 * Called on every room adjacent to the one that just changed state.
+	 * RoomID       = the room that needs to re-evaluate its shared door with NeighborID.
+	 * NeighborID   = the room whose state just changed.
+	 * NeighborState = the new state of that neighbor.
+	 * Implement in BP_DungeonManager to call UpdateSharedDoor on the wrapper.
+	 */
+	UFUNCTION(BlueprintImplementableEvent, Category = "Dungeon|Doors")
+	void BP_OnNeighborStateChanged(int32 RoomID, int32 NeighborID, EETHRoomState NeighborState);
+
+	// -------------------------------------------------------
+	// Door Connection API (new centralised door system)
+	// -------------------------------------------------------
+
+	/**
+	 * Enregistre une connexion logique entre deux salles (sans acteur porte).
+	 * Appelé par BP_DungeonGeneratorNEW quand deux connecteurs matchent.
+	 */
+	UFUNCTION(BlueprintCallable, Category = "Dungeon|Doors")
+	void RegisterPendingDoorConnection(int32 RoomID_A, int32 RoomID_B, FVector ConnectorWorldPos);
+
+	/**
+	 * Associe un acteur porte à une connexion existante par proximité.
+	 * Appelé par BP_RoomWrapper après le chargement du sublevel.
+	 * Déclenche immédiatement l'évaluation de l'état de la porte.
+	 */
+	UFUNCTION(BlueprintCallable, Category = "Dungeon|Doors")
+	void AssignDoorActorToConnection(int32 RoomID, AActor* DoorActor,
+	                                  FVector DoorWorldPos, float Tolerance = 500.f);
+
+	/** Retourne true si la porte entre A et B doit être ouverte (AND des deux états). */
+	UFUNCTION(BlueprintPure, Category = "Dungeon|Doors")
+	bool ShouldDoorBeOpen(int32 RoomID_A, int32 RoomID_B) const;
+
+	/**
+	 * Implémenté dans BP_DungeonManager.
+	 * Applique l'animation d'ouverture/fermeture sur l'acteur porte.
+	 */
+	UFUNCTION(BlueprintImplementableEvent, Category = "Dungeon|Doors")
+	void BP_SetDoorOpen(AActor* DoorActor, bool bOpen);
+
 protected:
 	// -------------------------------------------------------
 	// Tracked state (BlueprintReadOnly so BP can read them)
@@ -249,6 +307,9 @@ private:
 	/** Adjacency links added before a room is registered — flushed on RegisterRoom. */
 	TMap<int32, TArray<int32>> PendingAdjacency;
 
+	/** All registered door connections (bidirectional). Source of truth for door states. */
+	TArray<FETHDoorConnection> DoorConnections;
+
 	bool bAllRoomsReadyFired = false;
 
 	// -------------------------------------------------------
@@ -266,4 +327,10 @@ private:
 
 	/** Check whether ReadyRoomsCount reached TotalExpectedRooms and fire BP_OnAllRoomsReady once. */
 	void CheckAllRoomsReady();
+
+	/** Returns true for states where a door should be open (Discovered, Active, Cleared). */
+	static bool IsOpenState(EETHRoomState State);
+
+	/** Re-evaluate and apply open/close for all door connections involving RoomID. */
+	void RefreshDoorsForRoom(int32 RoomID);
 };
