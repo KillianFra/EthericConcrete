@@ -27,6 +27,13 @@ public:
 	UFUNCTION(BlueprintImplementableEvent, Category = "Anomaly")
 	void OnAnomalyChanged(int32 OldAnomaly, int32 NewAnomaly, const FGameplayTagContainer& EventTags);
 
+
+//Ali Tuto Part 8 : Ajouter une fonction qui permet de grant des ability
+protected:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AbilitySystem")
+	TArray<TSubclassOf<UGameplayAbility>> StartingAbility;
+
+	
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -47,6 +54,16 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	//Ali Tuto Part 8 : Ajouter une fonction qui permet de grant des ability depuis un array
+	UFUNCTION(BlueprintCallable,Category = "AbilitySystem")
+	TArray <FGameplayAbilitySpecHandle> GrantAbilities(TArray<TSubclassOf<UGameplayAbility>> AbilitiesToGrant);
+
+	UFUNCTION(BlueprintCallable, Category = "AbilitySystem")
+	void RemoveAbilities(TArray<FGameplayAbilitySpecHandle> AbilitiesHandlesToRemove);
+
+	UFUNCTION(BlueprintCallable, Category = "AbilitySystem")
+	void SendAbilitiesChangedEvent();
 
 
 private:
