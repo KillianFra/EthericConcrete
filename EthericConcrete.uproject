@@ -1,4 +1,4 @@
-                                                                                {
+{
 	"FileVersion": 3,
 	"EngineAssociation": "5.7",
 	"Category": "",
@@ -37,6 +37,18 @@
 		{
 			"Name": "ActorPalette",
 			"Enabled": true
+		},
+		{
+			"Name": "Mover",
+			"Enabled": true
+		},
+		{
+			"Name": "ChaosMover",
+			"Enabled": true
+		},
+		{
+			"Name": "WaveformEditor",
+			"Enabled": true
 		}
 	]
-}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+}

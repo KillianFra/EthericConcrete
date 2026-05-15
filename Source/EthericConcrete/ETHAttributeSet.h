@@ -7,13 +7,6 @@
 #include "AbilitySystemComponent.h"
 #include "ETHAttributeSet.generated.h"
 
-// Macro to easily declare attributes
-#define ATTRIBUTE_ACCESSORS(ClassName, PropertyName) \
-	GAMEPLAYATTRIBUTE_PROPERTY_GETTER(ClassName, PropertyName) \
-	GAMEPLAYATTRIBUTE_VALUE_GETTER(PropertyName) \
-	GAMEPLAYATTRIBUTE_VALUE_SETTER(PropertyName) \
-	GAMEPLAYATTRIBUTE_VALUE_INITTER(PropertyName)
-
 UCLASS()
 class ETHERICCONCRETE_API UETHAttributeSet : public UAttributeSet
 {
@@ -26,70 +19,70 @@ public:
 	/** ============= Anomaly (ANM) ============= */
 	UPROPERTY(BlueprintReadOnly, Category = "Anomaly", ReplicatedUsing = OnRep_Anomaly)
 	FGameplayAttributeData Anomaly;
-	ATTRIBUTE_ACCESSORS(UETHAttributeSet, Anomaly);
+	ATTRIBUTE_ACCESSORS_BASIC(UETHAttributeSet, Anomaly);
 
 	/** ============= Corpus (COR) ============= */
 	// Health is bounded, so it has Current + Max
 	UPROPERTY(BlueprintReadOnly, Category = "Corpus", ReplicatedUsing = OnRep_Health)
 	FGameplayAttributeData Health;
-	ATTRIBUTE_ACCESSORS(UETHAttributeSet, Health);
+	ATTRIBUTE_ACCESSORS_BASIC(UETHAttributeSet, Health);
 
 	UPROPERTY(BlueprintReadOnly, Category = "Corpus", ReplicatedUsing = OnRep_MaxHealth)
 	FGameplayAttributeData MaxHealth;
-	ATTRIBUTE_ACCESSORS(UETHAttributeSet, MaxHealth);
+	ATTRIBUTE_ACCESSORS_BASIC(UETHAttributeSet, MaxHealth);
 
 	UPROPERTY(BlueprintReadOnly, Category = "Corpus", ReplicatedUsing = OnRep_Armor)
 	FGameplayAttributeData Armor;
-	ATTRIBUTE_ACCESSORS(UETHAttributeSet, Armor);
+	ATTRIBUTE_ACCESSORS_BASIC(UETHAttributeSet, Armor);
 
 	UPROPERTY(BlueprintReadOnly, Category = "Corpus", ReplicatedUsing = OnRep_WeaponDamage)
 	FGameplayAttributeData WeaponDamage;
-	ATTRIBUTE_ACCESSORS(UETHAttributeSet, WeaponDamage);
+	ATTRIBUTE_ACCESSORS_BASIC(UETHAttributeSet, WeaponDamage);
 
 	/** ============= Kinetic (KIN) ============= */
 	// Move Speed has Base + Max (for clamping buffs/debuffs)
 	UPROPERTY(BlueprintReadOnly, Category = "Kinetic", ReplicatedUsing = OnRep_MoveSpeed)
 	FGameplayAttributeData MoveSpeed;
-	ATTRIBUTE_ACCESSORS(UETHAttributeSet, MoveSpeed);
+	ATTRIBUTE_ACCESSORS_BASIC(UETHAttributeSet, MoveSpeed);
 
 	UPROPERTY(BlueprintReadOnly, Category = "Kinetic", ReplicatedUsing = OnRep_MaxMoveSpeed)
 	FGameplayAttributeData MaxMoveSpeed;
-	ATTRIBUTE_ACCESSORS(UETHAttributeSet, MaxMoveSpeed);
+	ATTRIBUTE_ACCESSORS_BASIC(UETHAttributeSet, MaxMoveSpeed);
 
 	UPROPERTY(BlueprintReadOnly, Category = "Kinetic", ReplicatedUsing = OnRep_WeaponAttackSpeed)
 	FGameplayAttributeData WeaponAttackSpeed;
-	ATTRIBUTE_ACCESSORS(UETHAttributeSet, WeaponAttackSpeed);
+	ATTRIBUTE_ACCESSORS_BASIC(UETHAttributeSet, WeaponAttackSpeed);
 
 	UPROPERTY(BlueprintReadOnly, Category = "Kinetic", ReplicatedUsing = OnRep_MaxWeaponAttackSpeed)
 	FGameplayAttributeData MaxWeaponAttackSpeed;
-	ATTRIBUTE_ACCESSORS(UETHAttributeSet, MaxWeaponAttackSpeed);
+	ATTRIBUTE_ACCESSORS_BASIC(UETHAttributeSet, MaxWeaponAttackSpeed);
 
 	/** ============= Focus (FCS) ============= */
 	UPROPERTY(BlueprintReadOnly, Category = "Focus", ReplicatedUsing = OnRep_DistanceWeaponAccuracy)
 	FGameplayAttributeData DistanceWeaponAccuracy;
-	ATTRIBUTE_ACCESSORS(UETHAttributeSet, DistanceWeaponAccuracy);
+	ATTRIBUTE_ACCESSORS_BASIC(UETHAttributeSet, DistanceWeaponAccuracy);
 
 	UPROPERTY(BlueprintReadOnly, Category = "Focus", ReplicatedUsing = OnRep_CriticalChance)
 	FGameplayAttributeData CriticalChance;
-	ATTRIBUTE_ACCESSORS(UETHAttributeSet, CriticalChance);
+	ATTRIBUTE_ACCESSORS_BASIC(UETHAttributeSet, CriticalChance);
 
 	/** ============= Synapse (SYN) ============= */
 	UPROPERTY(BlueprintReadOnly, Category = "Synapse", ReplicatedUsing = OnRep_SpellDamage)
 	FGameplayAttributeData SpellDamage;
-	ATTRIBUTE_ACCESSORS(UETHAttributeSet, SpellDamage);
+	ATTRIBUTE_ACCESSORS_BASIC(UETHAttributeSet, SpellDamage);
 
 	UPROPERTY(BlueprintReadOnly, Category = "Synapse", ReplicatedUsing = OnRep_SpellCooldownReduction)
 	FGameplayAttributeData SpellCooldownReduction;
-	ATTRIBUTE_ACCESSORS(UETHAttributeSet, SpellCooldownReduction);
+	ATTRIBUTE_ACCESSORS_BASIC(UETHAttributeSet, SpellCooldownReduction);
 
 	/** ============= Echo (ECH) ============= */
 	UPROPERTY(BlueprintReadOnly, Category = "Echo", ReplicatedUsing = OnRep_CriticalDamage)
 	FGameplayAttributeData CriticalDamage;
-	ATTRIBUTE_ACCESSORS(UETHAttributeSet, CriticalDamage);
+	ATTRIBUTE_ACCESSORS_BASIC(UETHAttributeSet, CriticalDamage);
 
 	UPROPERTY(BlueprintReadOnly, Category = "Echo", ReplicatedUsing = OnRep_SpellCooldownReduction_Echo)
 	FGameplayAttributeData SpellCooldownReduction_Echo;
-	ATTRIBUTE_ACCESSORS(UETHAttributeSet, SpellCooldownReduction_Echo);
+	ATTRIBUTE_ACCESSORS_BASIC(UETHAttributeSet, SpellCooldownReduction_Echo);
 
 	/** ============= Replication ============= */
 protected:
