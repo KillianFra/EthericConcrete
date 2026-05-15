@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "unrealMCP": {
+      "type": "stdio",
+      "command": "uv",
+      "args": [
+        "--directory",
+        "C:\\Users\\frava\\Documents\\personal\\unreal-mcp2\\Python",
+        "run",
+        "unreal_mcp_server.py"
+      ],
+      "env": {}
+    }
+  }
+}

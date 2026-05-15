@@ -7,7 +7,7 @@
 		{
 			"Name": "EthericConcrete",
 			"Type": "Runtime",
-			"LoadingPhase": "Default",
+			"LoadingPhase": "PreDefault",
 			"AdditionalDependencies": [
 				"GameplayAbilities",
 				"Engine"
