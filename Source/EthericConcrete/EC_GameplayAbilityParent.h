@@ -15,6 +15,8 @@ class ETHERICCONCRETE_API UEC_GameplayAbilityParent : public UGameplayAbility
 	GENERATED_BODY()
 
 public:
+	UEC_GameplayAbilityParent();
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "UI")
 	bool ShouldShowInAbilitiesBar = false;
 	
