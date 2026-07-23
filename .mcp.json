@@ -1,15 +1,24 @@
 {
-  "mcpServers": {
-    "unrealMCP": {
-      "type": "stdio",
-      "command": "uv",
-      "args": [
-        "--directory",
-        "C:\\Users\\frava\\Documents\\personal\\unreal-mcp2\\Python",
-        "run",
-        "unreal_mcp_server.py"
-      ],
-      "env": {}
-    }
-  }
+	"mcpServers":
+	{
+		"unrealMCP":
+		{
+			"type": "stdio",
+			"command": "uv",
+			"args": [
+				"--directory",
+				"C:\\Users\\frava\\Documents\\personal\\unreal-mcp2\\Python",
+				"run",
+				"unreal_mcp_server.py"
+			],
+			"env":
+			{
+			}
+		},
+		"unreal-mcp":
+		{
+			"type": "http",
+			"url": "http://127.0.0.1:8000/mcp"
+		}
+	}
 }

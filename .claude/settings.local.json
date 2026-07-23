@@ -67,7 +67,11 @@
       "mcp__unrealMCP__add_node_to_function_graph",
       "Bash(\"C:\\\\Program Files\\\\Epic Games\\\\UE_5.7\\\\Engine\\\\Build\\\\BatchFiles\\\\Build.bat\" EthericConcreteEditor Win64 Development \"C:\\\\Users\\\\frava\\\\Documents\\\\Unreal Projects\\\\EthericConcrete 5.7\\\\EthericConcrete.uproject\" -WaitMutex -FromMsBuild)",
       "Bash(cmd /c \"\"\"C:\\\\Program Files\\\\Epic Games\\\\UE_5.7\\\\Engine\\\\Build\\\\BatchFiles\\\\Build.bat\"\" EthericConcreteEditor Win64 Development \"\"C:\\\\Users\\\\frava\\\\Documents\\\\Unreal Projects\\\\EthericConcrete 5.7\\\\EthericConcrete.uproject\"\" -WaitMutex -FromMsBuild > C:\\\\Users\\\\frava\\\\build_output.txt 2>&1\")",
-      "Bash(powershell -Command \"& 'C:\\\\Program Files\\\\Epic Games\\\\UE_5.7\\\\Engine\\\\Build\\\\BatchFiles\\\\Build.bat' EthericConcreteEditor Win64 Development 'C:\\\\Users\\\\frava\\\\Documents\\\\Unreal Projects\\\\EthericConcrete 5.7\\\\EthericConcrete.uproject' -WaitMutex -FromMsBuild 2>&1 | Select-Object -Last 20\" 2>&1)"
+      "Bash(powershell -Command \"& 'C:\\\\Program Files\\\\Epic Games\\\\UE_5.7\\\\Engine\\\\Build\\\\BatchFiles\\\\Build.bat' EthericConcreteEditor Win64 Development 'C:\\\\Users\\\\frava\\\\Documents\\\\Unreal Projects\\\\EthericConcrete 5.7\\\\EthericConcrete.uproject' -WaitMutex -FromMsBuild 2>&1 | Select-Object -Last 20\" 2>&1)",
+      "Bash(tasklist)",
+      "mcp__unreal-mcp__list_toolsets",
+      "mcp__unreal-mcp__describe_toolset",
+      "mcp__unreal-mcp__call_tool"
     ]
   },
   "enableAllProjectMcpServers": true,

@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "{FBF350DC-498A-507F-BAB7-B896CE566429}",
+	"EngineAssociation": "5.8",
 	"Category": "",
 	"Description": "",
 	"Modules": [
@@ -48,6 +48,22 @@
 		},
 		{
 			"Name": "WaveformEditor",
+			"Enabled": true
+		},
+		{
+			"Name": "UnrealMCP",
+			"Enabled": false
+		},
+		{
+			"Name": "ModelContextProtocol",
+			"Enabled": true
+		},
+		{
+			"Name": "Terminal",
+			"Enabled": true
+		},
+		{
+			"Name": "EditorToolset",
 			"Enabled": true
 		}
 	]
