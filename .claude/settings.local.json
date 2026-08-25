@@ -71,11 +71,13 @@
       "Bash(tasklist)",
       "mcp__unreal-mcp__list_toolsets",
       "mcp__unreal-mcp__describe_toolset",
-      "mcp__unreal-mcp__call_tool"
+      "mcp__unreal-mcp__call_tool",
+      "mcp__unrealMCP__list_blueprints"
     ]
   },
   "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
     "unrealMCP"
-  ]
+  ],
+  "enabledPlugins": {}
 }

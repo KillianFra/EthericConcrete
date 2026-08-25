@@ -1,27 +1,28 @@
 {
-    "mcpServers": {
-        "unrealMCP": {
-            "command": "uv",
-            "args": [
-                "--directory",
-                "C:\\Users\\frava\\Documents\\personal\\unreal-mcp2\\Python",
-                "run",
-                "unreal_mcp_server.py"
-            ]
-        }
-    },
-    "disabledTools": [
-        "mcp__unreal-engine__manage_audio",
-        "mcp__unreal-engine__manage_widget_authoring",
-        "mcp__unreal-engine__manage_texture",
-        "mcp__unreal-engine__manage_material_authoring",
-        "mcp__unreal-engine__manage_geometry",
-        "mcp__unreal-engine__manage_lighting",
-        "mcp__unreal-engine__manage_sequence",
-        "mcp__unreal-engine__manage_splines",
-        "mcp__unreal-engine__manage_performance",
-        "mcp__unreal-engine__manage_sessions",
-        "mcp__unreal-engine__manage_tools",
-        "mcp__unreal-engine__manage_networking"
-    ]
+  "enabledPlugins": {},
+  "mcpServers": {
+    "unrealMCP": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "C:\\Users\\frava\\Documents\\personal\\unreal-mcp2\\Python",
+        "run",
+        "unreal_mcp_server.py"
+      ]
+    }
+  },
+  "disabledTools": [
+    "mcp__unreal-engine__manage_audio",
+    "mcp__unreal-engine__manage_widget_authoring",
+    "mcp__unreal-engine__manage_texture",
+    "mcp__unreal-engine__manage_material_authoring",
+    "mcp__unreal-engine__manage_geometry",
+    "mcp__unreal-engine__manage_lighting",
+    "mcp__unreal-engine__manage_sequence",
+    "mcp__unreal-engine__manage_splines",
+    "mcp__unreal-engine__manage_performance",
+    "mcp__unreal-engine__manage_sessions",
+    "mcp__unreal-engine__manage_tools",
+    "mcp__unreal-engine__manage_networking"
+  ]
 }
