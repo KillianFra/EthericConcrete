@@ -31,7 +31,7 @@ Rooms are stored as parallel arrays on `BP_DungeonManager` (`RoomIDs`, `RoomStat
    - `DetermineRoomType` picks an `E_RoomType` + candidate PDA, based on position in the sequence: **this room is the first one spawned** (`Index == 0`) → `NewEnumerator3` (Start); **this is the last room left to spawn** (`TotalRoomNumber == 1`) → `NewEnumerator2` (treated as the boss slot, see below); otherwise → `NewEnumerator0` (random pick from `RoomsPDAList`).
    - `checkOverlap` retries with a 0.2s delay if the candidate would overlap something already placed.
    - `SpawnRoomOfType` switches on the `E_RoomType` and loads the right `.umap` via `LoadLevelInstance`. The `NewEnumerator2` (boss) case hardcodes `Room_Building_SquareMedium_Convert` instead of reading the PDA — that's a real TODO if you ever want boss rooms to be selectable/varied (see Traps below).
-   - Spawns a `BP_RoomWrapper` for the room, computes its `EETHRoomState`-style room-type byte via `DetermineRoomTypeByte()` (Boss=5 / Start=1 / Generic=2, mirroring the same positional logic above) and stores it on the wrapper via `SetRoomType`, then calls `InitializeRoom` on the wrapper (through the `BPI_DungeonRoom` interface — see the Room States section for why that matters).
+   - Spawns a `BP_RoomWrapper` for the room, converts that same `E_RoomType` value to an `EETHRoomState`-style byte via `DetermineRoomTypeByte(RoomType)` (`NewEnumerator2`→Boss=5, `NewEnumerator3`→Start=1, everything else→Generic=2) and stores it on the wrapper via `SetRoomType`, then calls `InitializeRoom` on the wrapper (through the `BPI_DungeonRoom` interface — see the Room States section for why that matters). `DetermineRoomTypeByte` takes the `E_RoomType` as a parameter rather than re-deriving "is this the last/first room" itself — there's exactly one place that decides room type/position (`DetermineRoomType`), so the level picked and the state assigned can never disagree.
    - Adds the wrapper to `RoomWrappers`, links parent/child adjacency via `DungeonManager.AddAdjacentRoom`, decrements the remaining count, and loops.
 3. Meanwhile each room's `BP_RoomWrapper.OnLevelContentReady` fires independently as its sub-level streams in (see Room Registration below).
 4. Once every spawned room has registered, `BP_DungeonManager.EventBP_OnAllRoomsReady` fires and calls the generator's `LinkConnectorTransforms` — an O(n²) proximity check (< 800 units) between every pair of rooms' connectors that creates the door connections (see Doors below).
@@ -158,7 +158,7 @@ Nothing else needs wiring per-room — `BP_RoomWrapper` picks up whatever spawn 
 
 ## Debug tools
 
-`BP_DungeonManager.bDebugMode` — note `EventBeginPlay` hardcodes it to `true` unconditionally, overriding whatever you set on the instance. To disable, remove/disable that node.
+`BP_DungeonManager.bDebugMode` — checkbox on the CDO/instance, defaults to `true`. `EventBeginPlay` respects it directly now (just reads it via a `Branch`) — toggle it on the instance in the Details panel to turn debug drawing on/off.
 
 With debug mode active:
 - `DebugDrawRoomStates` — 0.5s repeating timer, draws a colored sphere per room (green=open, red=blocking) + label, and a line per door connection.
